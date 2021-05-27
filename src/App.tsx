@@ -6,10 +6,11 @@ import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResults";
 import Details from "./pages/Details";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { ISearchResult } from "./typings";
 
 export const App = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<ISearchResult[]>([]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -28,13 +29,7 @@ export const App = () => {
             <SearchResults {...routerProps} searchInput={searchInput} setSearchResults={setSearchResults} searchResults={searchResults} />
           )}
         />
-        <Route
-          path="/details/:id"
-          exact
-          render={(routerProps) => (
-            <Details {...routerProps} searchInput={searchInput} setSearchResults={setSearchResults} searchResults={searchResults} />
-          )}
-        />
+        <Route path="/details/:id" exact render={(routerProps) => <Details {...routerProps} searchResults={searchResults} />} />
       </Router>
     </ChakraProvider>
   );
