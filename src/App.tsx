@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResults";
 import Details from "./pages/Details";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { ISearchResult } from "./typings";
 
 export const App = () => {
   const [searchInput, setSearchInput] = useState("");
