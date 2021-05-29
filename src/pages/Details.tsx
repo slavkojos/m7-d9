@@ -15,9 +15,6 @@ interface Props {
 export default function Details(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [songData, setSongData] = useState([]);
-  const [tracklist, setTracklist] = useState([]);
-  //const item = props.searchResults.find((track) => String(track.id) === props.match.params.id);
   const getData = useCallback(async () => {
     setIsLoading(true);
     setData(await fetchTrack(props.match.params.id));
