@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Center, Image, Flex, Input, Button, Link, Text, Container, Heading, Skeleton } from "@chakra-ui/react";
+import { Box, Image, Flex, Container, Heading, Skeleton } from "@chakra-ui/react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import { fetchTrack, getSongsFromTracklist } from "../functions/functions";
+import { fetchTrack } from "../functions/functions";
 import { useEffect, useState, useCallback } from "react";
 import { ISearchResult } from "../typings";
 import AlbumContainer from "../components/AlbumContainer";

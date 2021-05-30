@@ -1,4 +1,4 @@
-import { Box, Text, Center, Link, Button, Flex } from "@chakra-ui/react";
+import { Text, Button, Flex } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 function fancyTimeFormat(duration) {
@@ -21,13 +21,11 @@ function fancyTimeFormat(duration) {
 
 export default function Song(props) {
   return (
-    <Center my={2} as={Button} colorScheme="teal" variant="outline">
-      <Text as={RouterLink} to={`/details/` + props.id} textDecoration="none" w={"100%"}>
-        <Flex justify="space-between">
-          <Text>{props.index + ".  " + props.title}</Text>
-          <Text>{fancyTimeFormat(props.duration)}</Text>
-        </Flex>
-      </Text>
-    </Center>
+    <Button my={2} as={RouterLink} to={`/details/` + props.id} textDecoration="none" colorScheme="teal" variant="outline">
+      <Flex justify="space-between" w={"100%"}>
+        <Text isTruncated>{props.index + ".  " + props.title}</Text>
+        <Text>{fancyTimeFormat(props.duration)}</Text>
+      </Flex>
+    </Button>
   );
 }

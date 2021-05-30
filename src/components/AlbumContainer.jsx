@@ -10,7 +10,6 @@ export default function AlbumContainer(props) {
   const getData = useCallback(async () => {
     setIsLoading(true);
     setData(await getSongsFromTracklist(props.tracklistUrl));
-
     setIsLoading(false);
   }, [props.link]);
 
@@ -25,7 +24,7 @@ export default function AlbumContainer(props) {
         {props.albumTitle}
       </Heading>
       {data.map((song, index) => {
-        return <Song title={song.title} key={song.id} id={song.id} index={index + 1} duration={song.duration} />;
+        return <Song title={song.title_short} key={song.id} id={song.id} index={index + 1} duration={song.duration} />;
       })}
     </Flex>
   );
