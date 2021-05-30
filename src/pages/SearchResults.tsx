@@ -28,7 +28,7 @@ export default function SearchResults({ searchResults, searchInput, setSearchRes
     <Box>
       <Flex alignItems="center" justifyContent="center" flexDirection="column">
         {isLoading === true ? (
-          <SimpleGrid columns={[2, null, 4]} spacing="40px">
+          <SimpleGrid columns={[2, null, 4]} spacing="40px" px={2}>
             <Skeleton height="250px" width="250px" />
             <Skeleton height="250px" width="250px" />
             <Skeleton height="250px" width="250px" />

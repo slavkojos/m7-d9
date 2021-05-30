@@ -25,7 +25,7 @@ export default function AlbumContainer(props) {
         {props.albumTitle}
       </Heading>
       {data.map((song, index) => {
-        return <Song title={song.title} key={song.id} id={song.id} index={index + 1} />;
+        return <Song title={song.title} key={song.id} id={song.id} index={index + 1} duration={song.duration} />;
       })}
     </Flex>
   );

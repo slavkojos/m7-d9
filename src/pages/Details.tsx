@@ -18,18 +18,16 @@ export default function Details(props) {
   const getData = useCallback(async () => {
     setIsLoading(true);
     setData(await fetchTrack(props.match.params.id));
-
     setIsLoading(false);
   }, [props.match.params.id]);
 
   useEffect(() => {
-    console.log("pls");
     getData();
   }, [props.match.params.id]);
   console.log(props);
   console.log(data);
   return (
-    <Box>
+    <Box py={10}>
       {isLoading === true ? (
         <Container>
           <Skeleton height="500px" />
